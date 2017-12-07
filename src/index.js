@@ -8,12 +8,14 @@ import Redbox from 'redbox-react';
 // AppContainer 是一个 HMR 必须的包裹(wrapper)组件
 import RouterConfig from './Router'; // 路由配置
 import store from './Store'; // 引入Store
-
+import { LocaleProvider } from 'antd';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
 const history = createHistory();
 
 // 订阅state改变
 store.subscribe(() => {
-	console.log(process.env.NODE_ENV !== 'production' ? store.getState() : '');
+	console.log(store.getState());
+	// console.log(process.env.NODE_ENV !== 'production' ? store.getState() : '');
 });
 const render = (Component) => {
 	ReactDOM.render(<AppContainer><Provider store={store}><ConnectedRouter history={history}><Component /></ConnectedRouter></Provider></AppContainer>, document.getElementById('root'));
