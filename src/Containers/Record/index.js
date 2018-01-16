@@ -1,3 +1,4 @@
+// import { Component } from 'react-dom';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink, withRouter } from 'react-router-dom';
@@ -7,27 +8,27 @@ import QueueAnim from 'rc-queue-anim';
 
 @withRouter
 export default class Record extends Component {
-	componentWillMount () {
-	}
-	render () {
-		return (
-			<div key='Record' style={{ height: '1880px' }}>
-				<div>123</div>
-			</div>
-		);
-	}
+  componentWillMount () {
+  }
+  render () {
+    return (
+      <div key='Record' style={{ height: '1880px' }}>
+        <div>123</div>
+      </div>
+    );
+  }
 }
 Record.propTypes = {
-	// history: PropTypes.object,
-	// menuList: PropTypes.array.isRequired,
-	// cancelInfo: PropTypes.object,
-	// memo: PropTypes.string.isRequired,
-	// isAuth: PropTypes.bool.isRequired,
-	// itemList: PropTypes.array.isRequired,
-	// fetchUser: PropTypes.func.isRequired,
-	// word: PropTypes.string.isRequired,
-	// change: PropTypes.func.isRequired,
-	// demoSetState: PropTypes.func.isRequired
+  // history: PropTypes.object,
+  // menuList: PropTypes.array.isRequired,
+  // cancelInfo: PropTypes.object,
+  // memo: PropTypes.string.isRequired,
+  // isAuth: PropTypes.bool.isRequired,
+  // itemList: PropTypes.array.isRequired,
+  // fetchUser: PropTypes.func.isRequired,
+  // word: PropTypes.string.isRequired,
+  // change: PropTypes.func.isRequired,
+  // demoSetState: PropTypes.func.isRequired
 };
 // const mapStateToProps = (state) => {
 // 	return {
