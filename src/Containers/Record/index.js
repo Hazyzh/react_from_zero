@@ -1,12 +1,9 @@
 // import { Component } from 'react-dom';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, withRouter } from 'react-router-dom';
-import QueueAnim from 'rc-queue-anim';
 // import './index.less';
 // import { demoSetState, change, login } from '../../Action/index';
 
-@withRouter
 export default class Record extends Component {
   componentWillMount () {
   }
