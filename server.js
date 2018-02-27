@@ -1,8 +1,10 @@
+require('babel-register');
+
 const express = require('express'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     // configObject = require('./config'),
-    jwt = require('jsonwebtoken'),
+    // jwt = require('jsonwebtoken'),
     app = express(),
     request = require('request'),
     path = require('path'),
@@ -11,10 +13,10 @@ const express = require('express'),
     EventEmitter = require('events').EventEmitter;
 var jsonParser = bodyParser.json();
 
-var _resolve;
-var readyPromise = new Promise(resolve => {
-  _resolve = resolve
-});
+// var _resolve;
+// var readyPromise = new Promise(resolve => {
+//   _resolve = resolve
+// });
 
 /**
  * 判断是否有logs文件夹，没有的话自动加上，防止下面日志文件报错
@@ -71,10 +73,11 @@ app.get(['/*'], function (req, res) {
 
 // 登录逻辑
 app.post('/login', jsonParser, function (req, res) {
+  console.log(req.body);
     let username = req.body.username;
     let pwd = req.body.password;
     let url = req.body.url;
-	if( isProduction || isStaging ){
+	if( isProduction ){
 		var options = {
 				hostname: 'https-url',
 				path: 'restful-name'+'params',
@@ -101,6 +104,7 @@ app.post('/login', jsonParser, function (req, res) {
 	}else{
 		request.post('https-url'+'restful-name'+'params',
 			function (error, response, body) {
+        return res.json({code: '-1', message: 'error'});
 				if (!error && response.statusCode == 200) {
 					// todo try catch
 					let userResult = JSON.parse(body);

@@ -19,6 +19,15 @@ function objBaseURI () {
   }
 }
 
+export const newAPi = new Api({
+  baseURI: '/',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+},
+});
+
+
 function AjaxServer (type, path, params, data) {
   return api[type](path, { params, data: data })
 }
